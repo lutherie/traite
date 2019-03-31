@@ -44,9 +44,76 @@
 		<div id="content"><!-- Start content -->
 			<br /><br /><span style="color:#000000;"><br /></span><span style="font:11px &#39;Lucida Grande&#39;, LucidaGrande, Verdana, sans-serif; ">To order the Trait&eacute; de Lutherie, download the order form and return it by post or email<br />francoisdenis4@gmail.com <br /></span><a href="files/page5-order-form-.pdf">order form </a>
 
-		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAl_nj88Q5SDYP5tPeqoAu447wEMZh_cuxOeVMu-aVTzYvmw/viewform?embedded=true&usp=pp_url&entry.200953110=1" width="100%" height="1752" frameborder="0" marginheight="0" marginwidth="0">
-  Loading...
-</iframe>
+		  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAl_nj88Q5SDYP5tPeqoAu447wEMZh_cuxOeVMu-aVTzYvmw/viewform?usp=pp_url&amp;entry.200953110=1&amp;embedded=true" width="100%" height="1849" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+<h3 id="pay-with-card">Pay with card</h3>
+<ul>
+  <li>
+    <button id="checkout-button-230" role="link">Traiter de Lutherie + PDF (230€)</button>
+  </li>
+  <li>
+    <button id="checkout-button-215" role="link">Traiter de Lutherie (215€)</button>
+  </li>
+</ul>
+
+<h3 id="pay-with-paypal">Pay with paypal</h3>
+<ul>
+  <li><a href="https://www.paypal.me/traitedelutherie/230">Traiter de Lutherie + PDF (230€)</a></li>
+  <li><a href="https://www.paypal.me/traitedelutherie/215">Traiter de Lutherie (215€)</a></li>
+</ul>
+
+<h3 id="bank-transfert">Bank Transfert</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IBAN FR76 3000 4002 4300 0103 5805 671
+BIC BNPAFRPPXXX
+
+BNP PARIS AS BREST
+</code></pre></div></div>
+
+<h3 id="bank-check-payable-to-aladfi">Bank Check (payable to ALADFI)</h3>
+<p>Postal address:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mme elodie EGRET - Aladfi ed.
+8 Rue Boussingault
+Elodie Egret
+29200 Brest
+FRANCE 
+</code></pre></div></div>
+
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<script>
+var stripe = Stripe('pk_live_nDnMEpVdsNCRVfAi6gVPU2rk00B57X8hyQ', {
+  betas: ['checkout_beta_4']
+})
+
+function setStripe(id, items) {
+  document.getElementById(id).addEventListener('click', function () {
+    stripe.redirectToCheckout({
+      items: items,
+      successUrl: 'https://traitedelutherie.com/success',
+      cancelUrl: 'https://traitedelutherie.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        var displayError = document.getElementById('error-message')
+        displayError.textContent = result.error.message
+      }
+    })
+  })
+}
+
+setStripe('checkout-button-230', [
+  {sku: 'sku_EnciNWzNmYYbh8', quantity: 1},
+  {sku: 'sku_EnclvkJ8hiu8Iz', quantity: 1},
+])
+
+setStripe('checkout-button-215', [
+  {sku: 'sku_EnciNWzNmYYbh8', quantity: 1},
+])
+
+</script>
 
 		</div><!-- End content -->
 	</div><!-- End main content wrapper -->
