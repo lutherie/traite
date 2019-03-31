@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Traite de Lutherie</title>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//api.github.com">
+  <style>
+html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}:root{-moz-tab-size:4;tab-size:4}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'}hr{height:0}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{padding:0}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Crimson Text Italic'), local('CrimsonText-Italic'), url(https://fonts.gstatic.com/s/crimsontext/v9/wlpogwHKFkZgtmSR3NB0oRJfajhRK_Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Crimson Text Regular'), local('CrimsonText-Regular'), url(https://fonts.gstatic.com/s/crimsontext/v9/wlp2gwHKFkZgtmSR3NB0oRJfbwhT.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Crimson Text SemiBold'), local('CrimsonText-SemiBold'), url(https://fonts.gstatic.com/s/crimsontext/v9/wlppgwHKFkZgtmSR3NB0oRJXsCxGDNNQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh7USSwaPGR_p.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh7USSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html,
+body,
+button,
+code,
+kbd,
+pre,
+samp,
+p {
+  font-family: 'Crimson Text';
+  color: #292318;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato';
+  color: #c31515;
+}
+
+code, pre {
+  background: #f6f2eb;
+  padding: 0 0.25em;
+  border-radius: 0.25em;
+  color: #4e4b42;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f2eb;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #c31515;
+}
+
+header {
+  height: 180px;
+  background-color: #dad6cd;
+  overflow: hidden;
+  background-image: url(https://lutherie.github.io/images/banner.jpg);
+  background-blend-mode: multiply;
+  background-size: auto 180px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header h1 {
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+  font-weight: normal;
+  font-size: 60px;
+  color: #242320;
+}
+
+#content {
+  display: flex;
+  flex: 1;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1020px;
+}
+
+img {
+  margin: 0 auto 1em;
+  display: block;
+}
+
+img.right {
+  float: right;
+  margin-left: 1em;
+  display: inline-block;
+}
+
+img.left {
+  float: left;
+  margin-right: 1em;
+  display: inline-block;
+}
+
+article {
+  flex: 1;
+  padding: 0 20px;
+  font-size: 1.1em;
+  max-width: 640px;
+  background-color: white;
+}
+
+nav {
+  min-width: 180px;
+  text-align: end;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0 24px;
+}
+
+nav ul .category {
+  font-family: 'Vollkorn SC';
+  padding-top: 12px;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+nav ul li {
+  padding-top: 3px;
+  padding-left: 0;
+}
+
+footer {
+  height: 180px;
+  background-color: #242320;
+  color: #dad6cd;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer small {
+  color: #8f8375;
+}
+
+@media (max-width: 768px) {
+  header, footer {
+    height: 120px;
+  }
+  #article {
+    padding: 0 9px;
+  }
+  nav {
+    min-width: 0;
+  }
+  nav ul {
+    padding: 0 9px;
+  }
+  header h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 481px) {
+  img.right,
+  img.left {
+    float: none;
+    margin: 0 auto;
+    display: block;
+  }
+
+  #content {
+    flex-direction: column;
+  }
+  nav ul {
+    padding: 0 24px;
+  }
+  header {
+    height: 90px;
+  }
+  header h1 {
+    letter-spacing: 0;
+    font-size: 40px;
+  }
+}
+
+button.locale {
+  background: transparent;
+  font-size: 19px;
+  color: #c31515;
+  border: 2px solid transparent;
+}
+
+button.locale:focus {
+  border: none;
+  background: transparent;
+  font-size: 19px;
+  border: 2px solid #c31515;
+  outline: none;
+}
+
+button[disabled] {
+  color: #646159;
+  border-bottom: 2px solid #646159;
+}
+
+body > * {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+body.reveal > * {
+  opacity: 1
+}
+
+</style>
+<noscript>
+  <style type="text/css">
+    body > * { opacity: 1!important }
+  </style>
+  This website use javascript, you can consult the content here
+  <a href="//lutherie.github.io/pages">github.com/lutherie</a>
+</noscript>
+</head>
+<body>
+<header>
+  <h1>Traité de Lutherie</h1>
+</header>
+<div id="content">
+  <nav role="navigation">
+    <div style="margin-top: -27px">
+      <button class="locale" id="fr">Français</button>
+      <button class="locale" id="en">English</button>
+    </div>
+    <ul id="nav"></ul>
+  </nav>
+  <article id="article">
+    If the website takes doesn't load properly, you can access the
+    <a href="/pages">alternative version</a>
+
+    <hr>
+
+    Si le site ne charge pas, vous pouvez consulter la
+    <a href="/pages">version alternative</a>
+  </article>
+</div>
+<footer>
+  <address>
+  For more details, contact
+  <a href="mailto:francoisdenis4@gmail.com">Francois Denis</a>.
+  </address>
+  <p><small>© copyright 2018 Aladfi edition.</small></p>
+</footer>
+<script type="module" src="./script.js"></script>
+<script>
+  setTimeout(function () { document.body.className = 'reveal' }, 250)
+</script>
+</body>
+</html>
