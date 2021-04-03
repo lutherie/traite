@@ -46,20 +46,21 @@
 
 		  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAl_nj88Q5SDYP5tPeqoAu447wEMZh_cuxOeVMu-aVTzYvmw/viewform?usp=pp_url&amp;entry.200953110=1&amp;embedded=true" width="100%" height="2020" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
+<h4><i>Shiping cost included for each all kind of payments</i></h4>
 <h3 id="pay-with-card">Pay with card</h3>
 <ul>
   <li>
-    <button id="checkout-button-230" role="link">Traiter de Lutherie + PDF (230€)</button>
+    <button id="checkout-button-pdf" role="link">Traité de Lutherie + PDF (240€)</button>
   </li>
   <li>
-    <button id="checkout-button-215" role="link">Traiter de Lutherie (215€)</button>
+    <button id="checkout-button" role="link">Traité de Lutherie (230€)</button>
   </li>
 </ul>
 
 <h3 id="pay-with-paypal">Pay with paypal</h3>
 <ul>
-  <li><a href="https://www.paypal.me/traitedelutherie/230">Traiter de Lutherie + PDF (230€)</a></li>
-  <li><a href="https://www.paypal.me/traitedelutherie/215">Traiter de Lutherie (215€)</a></li>
+  <li><a href="https://www.paypal.me/traitedelutherie/240">Traité de Lutherie + PDF (240€)</a></li>
+  <li><a href="https://www.paypal.me/traitedelutherie/230">Traité de Lutherie (230€)</a></li>
 </ul>
 
 <h3 id="bank-transfert">Bank Transfert</h3>
@@ -104,13 +105,16 @@ function setStripe(id, items) {
   })
 }
 
-setStripe('checkout-button-230', [
-  {sku: 'sku_EnciNWzNmYYbh8', quantity: 1},
-  {sku: 'sku_EnclvkJ8hiu8Iz', quantity: 1},
+const BOOK = 'sku_EnciNWzNmYYbh8'
+const PDF = 'sku_EnclvkJ8hiu8Iz'
+
+setStripe('checkout-button-pdf', [
+  {sku: BOOK, quantity: 1},
+  {sku: PDF, quantity: 1},
 ])
 
-setStripe('checkout-button-215', [
-  {sku: 'sku_EnciNWzNmYYbh8', quantity: 1},
+setStripe('checkout-button', [
+  {sku: BOOK, quantity: 1},
 ])
 
 </script>
