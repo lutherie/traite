@@ -42,84 +42,10 @@
 	
 	<div id="contentContainer"><!-- Start main content wrapper -->
 		<div id="content"><!-- Start content -->
-			<br /><br /><span style="color:#000000;">Pour commander le Trait&eacute; de lutherie, <br />t&eacute;l&eacute;charger le bon de commande et le retourner <br /></span><span style="font-size:14px; color:#000000;font-weight:bold; ">par courrier postal ou email &agrave; francoisdenis4@gmail.com<br /></span><span style="font-size:14px; color:#000000;font-weight:bold; "><br /></span>
+			<br />
+			<br />
+			<span style="color:#000000;">Livre &eacutepuiser</span>
 		</div><!-- End content -->
-		      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAl_nj88Q5SDYP5tPeqoAu447wEMZh_cuxOeVMu-aVTzYvmw/viewform?usp=pp_url&amp;entry.200953110=1&amp;embedded=true" width="100%" height="2020" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
-<h4><i>Frais de ports inclus pour tous les moyens de paiement</i></h4>
-<h3 id="pay-with-card">Par carte bancaire</h3>
-<ul>
-  <li>
-    <button id="checkout-button-pdf" role="link">Traité de Lutherie + PDF (240€)</button>
-  </li>
-  <li>
-    <button id="checkout-button" role="link">Traité de Lutherie (230€)</button>
-  </li>
-</ul>
-
-<h3 id="pay-with-paypal">Avec paypal</h3>
-<ul>
-  <li><a href="https://www.paypal.me/traitedelutherie/240">Traité de Lutherie + PDF (240€)</a></li>
-  <li><a href="https://www.paypal.me/traitedelutherie/230">Traité de Lutherie (230€)</a></li>
-</ul>
-
-<h3 id="bank-transfert">Virement</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IBAN FR76 3000 4002 4300 0103 5805 671
-BIC BNPAFRPPXXX
-
-BNP PARIS AS BREST
-</code></pre></div></div>
-
-<h3 id="bank-check-payable-to-aladfi">Chèque bancaire (payable à ALADFI)</h3>
-<p>adresse postale:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mme elodie EGRET - Aladfi ed.
-8 Rue Boussingault
-Elodie Egret
-29200 Brest
-FRANCE 
-</code></pre></div></div>
-
-<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
-<script>
-var stripe = Stripe('pk_live_nDnMEpVdsNCRVfAi6gVPU2rk00B57X8hyQ', {
-  betas: ['checkout_beta_4']
-})
-
-function setStripe(id, items) {
-  document.getElementById(id).addEventListener('click', function () {
-    stripe.redirectToCheckout({
-      items: items,
-      successUrl: 'https://traitedelutherie.com/success',
-      cancelUrl: 'https://traitedelutherie.com/canceled',
-    })
-    .then(function (result) {
-      if (result.error) {
-        var displayError = document.getElementById('error-message')
-        displayError.textContent = result.error.message
-      }
-    })
-  })
-}
-
-const BOOK = 'sku_EnciNWzNmYYbh8'
-const PDF = 'sku_EnclvkJ8hiu8Iz'
-
-setStripe('checkout-button-pdf', [
-  {sku: BOOK, quantity: 1},
-  {sku: PDF, quantity: 1},
-])
-
-setStripe('checkout-button', [
-  {sku: BOOK, quantity: 1},
-])
-
-</script>
-
-
 	</div><!-- End main content wrapper -->
 	
 	<div class="clearer"></div>
